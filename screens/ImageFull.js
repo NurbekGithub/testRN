@@ -1,11 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Image, View } from 'react-native';
+import { Tile } from 'react-native-elements';
 
-export default class Image extends React.Component {
+export default class ImageFull extends React.Component {
   render() {
+    const { image_url } = this.props.navigation.state.params;
     return (
       <View style={styles.container}>
-        <Text> asdas Image </Text>
+        <Tile imageSrc={{ uri: image_url }} /> 
       </View>
     );
   }

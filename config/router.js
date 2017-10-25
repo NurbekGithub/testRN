@@ -1,18 +1,21 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
 
-import List from '../screens/List';
-import Image from '../screens/Image';
+import ImagesList from '../screens/ImagesList';
+import ImageFull from '../screens/ImageFull';
 
 const ListStack = StackNavigator({
-    List: {
-        screen: List,
+    ImagesList: {
+        screen: ImagesList,
         navigationOptions: {
             title: 'ImagesList'
         }
     },
-    Image: {
-        screen: Image
+    ImageFull: {
+        screen: ImageFull,
+        navigationOptions: ({ navigation }) => ({
+            title: `${navigation.state.params.name.toUpperCase()}`
+        })
     }
 });
 
